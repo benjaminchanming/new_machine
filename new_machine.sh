@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-sudo apt-get install curl
 sudo apt-get install git
-curl -L https://get.rvm.io | bash -s stable --ruby
-gem install puppet
+sudo apt-get install puppet
+git clone git://github.com/benjaminchanming/puppet-emacs.git  
+mv ~/puppet-emacs /etc/puppet/modules/emacs
+sudo puppet apply --verbose -e "include emacs"
